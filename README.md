@@ -1,5 +1,8 @@
 # Dark Moon
 <!-- ![Preview](http://i64.tinypic.com/121udmo.png) -->
+![Preview](https://i.imgur.com/TIPWs5C.png)
+
+Preview on clean profile of Pale Moon (with Tree Style Tabs)
 
 Dark theme for Pale Moon, based on [White Moon](https://github.com/Lootyhoof/whitemoon).
 
