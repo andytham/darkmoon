@@ -1549,15 +1549,20 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 #TabsToolbar > #new-tab-button {
   width: 26px;
+
 }
 
 #alltabs-button {
   list-style-image: url("chrome://browser/skin/tabbrowser/alltabs.png");
   -moz-image-region: rect(0, 14px, 16px, 0);
+  background-color: rgb(23,23,23) !important;
 }
-
+#alltabs-button:hover {
+    background-color: rgb(74,74,74) !important;
+}
 #alltabs-button:hover:active {
   -moz-image-region: rect(0, 28px, 16px, 14px);
+
 }
 
 #alltabs-button[type="menu"] {
