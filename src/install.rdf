@@ -8,7 +8,7 @@
     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
   <Description about="urn:mozilla:install-manifest">
-    <em:id>darkmoon@lootyhoof-pm</em:id>
+    <em:id>darkmoon@andytham</em:id>
     <em:version>1.7.1</em:version>
     <em:name>Dark Moon</em:name>
     <em:description>The ultimate dark experience. Minor edit to work with Tree Style Tabs.</em:description>
