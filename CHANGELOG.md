@@ -1,4 +1,6 @@
 # Changelog
+### 1.7.1
+- Minor edit to css to work with specific Tree Style Tabs theme.
 
 ### 1.7.0
 - sync about:support styling with default
