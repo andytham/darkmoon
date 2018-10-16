@@ -6,68 +6,22 @@
   == Styles specific to the alerts dialog.
   ======================================================================= */
 
-@import url("chrome://global/skin/");
+@import url("chrome://global/skin/alerts/alert-common.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.alertBox {
+#alertNotification {
+  -moz-appearance: none;
+  background: transparent;
+  padding: 10px;
+}
+
+#alertBox {
   border: 1px solid rgb(75,75,75);
-  border-radius: 3px;
+  border-radius: 0;
   background-color: rgb(43,43,43);
-}
-
-.alertImageBox {
-  padding: 8px 0;
-  width: 64px;
-}
-
-.alertTextBox {
-  padding: 8px;
-  -moz-padding-start: 16px;
-  width: 255px;
-}
-
-.alertTitle {
-  font-weight: bold;
-  font-size: 110%;
-}
-
-#alertImage {
-  max-width: 48px;
-  max-height: 48px;
-  list-style-image: url(chrome://global/skin/alerts/notification-48.png);
-}
-
-#alertNotification[clickable="true"] {
-  cursor: pointer;
-}
-
-label {
-  cursor: inherit;
-}
-
-.alertText[clickable="true"] {
   color: #fff;
-  text-decoration: underline;
-}
-
-.alertText[clickable="true"]:hover:active {
-  color: rgb(219,219,219);
-}
-
-@keyframes alert-animation {
-  from {
-    opacity: 0;
-  }
-  6.25% {
-    opacity: 1;
-  }
-  93.75% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  box-shadow: 0 0 4px rgba(255,255,255,.3);
 }
 
 .alertCloseButton {
@@ -76,6 +30,17 @@ label {
   border: none !important;
 }
 
-.alertCloseButton > .toolbarbutton-text {
-  display: none;
+#alertTitleBox > .alertCloseBox {
+  /* The close button is larger on Windows and has a large
+     circle around it, so we add more space between the close
+     button and the edge of the window. */
+  margin-inline-end: 2px;
+}
+
+#alertSettings {
+  /* The close button is larger on Windows, so the
+     gear button is moved over to accomodate it and
+     keep the two buttons horizontally aligned together. */
+  margin-inline-end: 4px;
+  margin-bottom: -1px;
 }

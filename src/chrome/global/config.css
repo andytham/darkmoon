@@ -1,76 +1,52 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import url("chrome://global/skin/");
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-
-#warningScreen
-{
-  background-color: rgb(23,23,23);
+#warningScreen {
+  font-size: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-inline-start: calc(48px + 4.6em);
+  padding-inline-end: 48px;
+  padding-inline-start: calc(48px + 4.6em);
+  padding-inline-end: 48px;
 }
 
-#warningBox
-{
-  background-color: rgb(43,43,43);
+.title {
+  background-image: url("chrome://global/skin/icons/warning.svg");
+}
+
+#warningTitle {
+  font-weight: lighter;
+  line-height: 1.2;
   color: #fff;
-  border: 1px solid rgb(50,50,50);
-  border-radius: 10px;
-  padding: 3em;
-  -moz-padding-start: 30px;
-  margin-left: 1em;
-  margin-right: 1em;
+  margin: 0;
+  margin-bottom: .5em;
 }
 
-#warningInnerBox
-{
- max-width: 50em;
+#warningText {
+  margin: 1em 0;
 }
 
-#warningTitle
-{
-  margin: 0 0 .6em 0;
-  font-size: 160%;
-  border-bottom: 1px solid rgb(50,50,50);
-}
-
-#warningText
-{
-  font-size: 110%;
-  margin-left: 0;
-}
-
-#warningButton
-{
+#warningButton {
   margin-top: 0.6em;
 }
 
-#showWarningNextTime
-{
-  margin-top: 0.6em;
+#filterRow {
+  margin-top: 4px;
+  margin-inline-start: 4px;
+  margin-inline-start: 4px;
 }
 
-#exclam
-{
-  list-style-image: url("chrome://global/skin/icons/warning-large.png");
-  -moz-margin-end: 3em;
+#configTree {
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
-#configTreeBody::-moz-tree-cell-text(user)
-{
+#configTreeBody::-moz-tree-cell-text(user) {
   font-weight: bold;
 }
 
-#configTreeBody::-moz-tree-cell-text(locked)
-{
+#configTreeBody::-moz-tree-cell-text(locked) {
   font-style: italic;
-}
-
-#configTree 
-{  
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-#filterRow
-{
-  margin-top: 5px;
 }

@@ -3,15 +3,12 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 html {
-  background-color: rgb(43,43,43);
-  color: #fff;
-  font: message-box;
+  --aboutSupport-table-background: rgb(75,75,75);
+  background-color: var(--in-content-page-background);
 }
 
 body {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 40px 48px;
 }
 
 .page-subtitle {
@@ -26,19 +23,24 @@ body {
   font-weight: bold;
 }
 
+button {
+  margin-inline-start: 0;
+  margin-inline-end: 8px;
+}
+
 table {
-  background-color: rgb(75,75,75);
-  color: #fff;
+  background-color: var(--aboutSupport-table-background);
+  color: var(--in-content-text-color);
   font: message-box;
   text-align: start;
   width: 100%;
-  border: 1px solid rgb(50,50,50);
+  border: 1px solid var(--in-content-border-color);
   border-spacing: 0px;
 }
 
 th, td {
-  border: 1px dotted rgb(50,50,50);
-  padding: 3px;
+  border: 1px solid var(--in-content-border-color);
+  padding: 4px;
 }
 
 thead th {
@@ -47,8 +49,14 @@ thead th {
 
 th {
   text-align: start;
-  background-color: rgb(110,110,110);
-  color: #fff;
+  background-color: var(--in-content-table-header-background);
+  color: var(--in-content-selected-text);
+}
+
+th.title-column {
+  white-space: nowrap;
+  width: 0px;
+  font-size: medium;
 }
 
 th.column {
@@ -58,7 +66,7 @@ th.column {
 
 td {
   text-align: start;
-  border-top: 1px dotted rgb(50,50,50);
+  border-color: var(--in-content-table-border-dark-color);
 }
 
 .prefs-table {
@@ -79,20 +87,16 @@ td {
 }
 
 #action-box {
-  background-color: rgb(75,75,75);
-  border: 1px solid rgb(50,50,50);
-  color: #fff;
+  background-color: var(--aboutSupport-table-background);
+  border: 1px solid var(--in-content-border-color);
+  color: var(--in-content-text-color);
   float: right;
   margin-top: 2em;
   margin-bottom: 20px;
-  -moz-margin-start: 20px;
-  -moz-margin-end: 0;
+  margin-inline-start: 20px;
+  margin-inline-end: 0;
   padding: 16px;
   width: 30%;
-}
-
-#contents {
-  clear: right;
 }
 
 #action-box,
@@ -101,7 +105,7 @@ td {
   display: none;
 }
 
-#action-box:-moz-dir(rtl) {
+#action-box:dir(rtl) {
   float: left;
 }
 

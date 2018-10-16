@@ -1,4 +1,6 @@
 # Dark Moon
+Updated 2018-10-15: Pulled Lootyhoof's updates for Pale Moon 28.
+
 <!-- ![Preview](http://i64.tinypic.com/121udmo.png) -->
 ![Preview](https://i.imgur.com/TIPWs5C.png)
 

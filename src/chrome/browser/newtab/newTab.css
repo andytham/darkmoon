@@ -1,7 +1,7 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
- 
+
 :root {
   -moz-appearance: none;
   font-size: 75%;
@@ -9,7 +9,7 @@
 }
 
 /* SCROLLBOX */
-#newtab-scrollbox:not([page-disabled]) {
+#newtab-vertical-margin {
   background-color: rgb(43,43,43);
   background-attachment: fixed;
 }
@@ -48,33 +48,30 @@
   outline: 1px dotted rgb(75,75,75);
 }
 
-.newtab-undo-button > .button-box {
+#newtab-undo-close-button {
+  -moz-appearance: none;
   padding: 0;
+  border: none;
 }
 
 #newtab-undo-close-button {
   -moz-appearance: none;
   padding: 0;
   border: none;
-  list-style-image: url("chrome://global/skin/icons/close.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
-  -moz-user-focus: normal;
+  height: 16px;
+  width: 16px;
+  float: right;
+  right: 0;
+  background-image: url(chrome://global/skin/icons/close.svg#normal);
+  background-color: transparent;
 }
 
 #newtab-undo-close-button:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
+  background-image: url(chrome://global/skin/icons/close.svg#hover);
 }
 
 #newtab-undo-close-button:hover:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
-}
-
-#newtab-undo-close-button > .toolbarbutton-text {
-  display: none;
-}
-
-#newtab-undo-close-button:-moz-focusring {
-  outline: 1px dotted;
+  background-image: url(chrome://global/skin/icons/close.svg#active);
 }
 
 /* TOGGLE */
@@ -102,7 +99,7 @@
 
 /* CELLS */
 .newtab-cell {
-  -moz-margin-end: 20px;
+  margin-inline-end: 20px;
   background-color: rgb(50,50,50);
   border: 1px solid rgb(75,75,75);
   transition: border-color 100ms ease-out;
@@ -113,7 +110,7 @@
 }
 
 .newtab-cell:last-child {
-  -moz-margin-end: 0;
+  margin-inline-end: 0;
 }
 
 .newtab-cell:hover:not(:empty) {
@@ -154,6 +151,27 @@
   line-height: 24px;
 }
 
+.newtab-site[pinned] .newtab-title {
+  padding-inline-start: 24px;
+}
+
+.newtab-site[pinned] .newtab-title::before {
+  background-image: -moz-image-rect(url("chrome://browser/skin/newtab/controls.svg"), 7, 278, 28, 266);
+  background-size: 10px;
+  content: "";
+  height: 17px;
+  left: 0;
+  position: absolute;
+  width: 10px;
+  margin-left: 8px;
+  margin-top: 6px;
+}
+
+.newtab-site[pinned] .newtab-title:dir(rtl)::before {
+  left: auto;
+  right: 0;
+}
+
 /* CONTROLS */
 .newtab-control {
   background-color: transparent;
@@ -161,6 +179,16 @@
   border: none;
   height: 26px;
   width: 24px;
+}
+
+.newtab-control-pin:dir(ltr),
+.newtab-control-block:dir(rtl) {
+  left: 4px;
+}
+
+.newtab-control-block:dir(ltr),
+.newtab-control-pin:dir(rtl) {
+  right: 4px;
 }
 
 .newtab-control-pin,
@@ -190,12 +218,83 @@
   background-image: -moz-image-rect(url(chrome://browser/skin/newtab/controls.svg), 0, 256, 33, 224);
 }
 
-/* MARGINS */
-#newtab-margin-top,
-#newtab-margin-bottom {
-  min-height: 30px;
+.newtab-undo-button {
+  -moz-appearance: none;
+  color: -moz-nativehyperlinktext;
+  color: rgb(0,102,204);
+  cursor: pointer;
+  padding: 0;
+  margin: 0 4px;
+  border: 0;
+  background: transparent;
+  text-decoration: none;
+  min-width: 0;
 }
 
-.newtab-side-margin {
-  min-width: 50px;
+.newtab-undo-button > .button-box {
+  padding: 0;
+}
+
+#newtab-undo-close-button {
+  -moz-appearance: none;
+  padding: 0;
+  border: none;
+  -moz-user-focus: normal;
+}
+
+
+/* SEARCH */
+#searchEngineLogo {
+  /* remove the default DDG image - it looks really bad on our dark b/g */
+  opacity: 0;
+}
+
+#searchText {
+  -moz-box-flex: 1;
+  color: #fff;
+  padding: 6px 8px;
+  background-color: rgb(50, 50, 50);
+  border: 1px solid;
+  border-color: rgb(75, 75, 75);
+  border-radius: 5px 0 0 5px;
+  box-shadow: none;
+}
+
+#searchText:-moz-dir(rtl) {
+  border-radius: 0 5px 5px 0;
+}
+
+#searchText:focus,
+#searchText[autofocus] {
+  border-color: rgb(110, 110, 110);
+}
+
+#searchSubmit {
+  margin-inline-start: -1px;
+  padding: 0 9px;
+  color: #fff;
+  background-color: rgb(60, 60, 60);
+  border: 1px solid;
+  border-color: rgb(75, 75, 75);
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  box-shadow: none;
+}
+
+#searchSubmit:-moz-dir(rtl) {
+  border-radius: 5px 0 0 5px;
+}
+
+#searchText:focus + #searchSubmit,
+#searchText + #searchSubmit:hover,
+#searchText[autofocus] + #searchSubmit {
+  border-color: rgb(110, 110, 110);
+  background-color: rgb(75, 75, 75);
+}
+
+#searchText + #searchSubmit:hover:active {
+  border-color: rgb(75, 75, 75);
+  background-color: rgb(23, 23, 23);
 }

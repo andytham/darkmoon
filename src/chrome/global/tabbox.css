@@ -33,8 +33,7 @@ tabpanels {
 
 /* ::::: tab ::::: */
 
-tab 
-{
+tab {
   -moz-appearance: none;
   margin-top: 2px;
   border-top: 1px solid;
